@@ -21,8 +21,11 @@ http patch http://127.0.0.1:5000/users/5c35cb4d3fdca1dfb83f5fe0 firstname=SuperC
 
 http http://127.0.0.1:5000/users/5c35cb4d3fdca1dfb83f5fe0
 
-echo '[{"username": "userone", "firstname": "First", "lastname":"Last"},{"username":"usertwo", "firstname":"First", "lastname":"Last"}]' | http http://127.0.0.1:5000/users
+http http://127.0.0.1:5000/users?where firstname="SuperChuck"
+http http://127.0.0.1:5000/users\?where='{"firstname":"Jacki"}'
+http http://127.0.0.1:5000/users\?sort\=-username
+
 
 5c35dca23fdca1b4981732b9 - Friends
 5c35c7713fdca1dfb83f5fdf - Jacki Chan
-5c35cb4d3fdca1dfb83f5fe0 - Chuck Norris
+5c35cb4d3fdca1dfb83f5fe0 - SuperChuck Norris
