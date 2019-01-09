@@ -1,0 +1,28 @@
+____pip install httpie____
+
+http http://127.0.0.1:5000/
+
+http http://127.0.0.1:5000/users
+
+http http://127.0.0.1:5000/groups
+
+http http://127.0.0.1:5000/users username=johndoe firstname=John lastname=Doe
+
+http http://127.0.0.1:5000/users username=chucknorris firstname=Chuck lastname=Norris
+
+http put http://127.0.0.1:5000/users/5c35c7713fdca1dfb83f5fdf "If-Match":"5bb4647cf5474684c239014d8bc15894a8a4dfc5" username=jackichan firstname="Jacki" lastname="Chan"
+
+http http://127.0.0.1:5000/groups title="Friends" users:"['5c35c7713fdca1dfb83f5fdf']"
+
+http http://127.0.0.1:5000/groups/5c35dca23fdca1b4981732b9?/\embedded={"users":1}
+http http://127.0.0.1:5000/groups/5c35dca23fdca1b4981732b9?/\embedded={"users":1} "Accept":"application/xml"
+
+http patch http://127.0.0.1:5000/users/5c35cb4d3fdca1dfb83f5fe0 firstname=SuperChuck "If-Match":"add5644cbb227abec588d9d404c7612b61b20349"
+
+http http://127.0.0.1:5000/users/5c35cb4d3fdca1dfb83f5fe0
+
+echo '[{"username": "userone", "firstname": "First", "lastname":"Last"},{"username":"usertwo", "firstname":"First", "lastname":"Last"}]' | http http://127.0.0.1:5000/users
+
+5c35dca23fdca1b4981732b9 - Friends
+5c35c7713fdca1dfb83f5fdf - Jacki Chan
+5c35cb4d3fdca1dfb83f5fe0 - Chuck Norris
